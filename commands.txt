@@ -5,7 +5,25 @@ truffle migrate
 truffle console
 
 // on truffle console : for testing in console
+//getting a deployed instance and assigning it to a variable
 Election.deployed().then(function(instance) { app = instance })
 app.address
 app.candidate()
 
+//whenever we change code on smart contract. Since blockchain is immutable, the new deployed contract will not have the same state or address as the old one. Deploying costs gas as well.
+truffle migrate --reset
+
+//on truffle console
+app.candidates(id).then(function(c){candidate=c});
+candidate;
+candidate[2]; //to access vote count
+candidate[0].toNumber(); //to access candidate id as number
+
+// for voters ; get access to all accounts (truffle console)
+web3.eth.getAccounts().then(function(acc){ accounts = acc })
+accounts[2];
+
+
+//TESTING
+Truffle comes built in with https://mochajs.org/ and https://www.chaijs.com/
+truffle test
