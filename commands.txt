@@ -27,3 +27,7 @@ accounts[2];
 //TESTING
 Truffle comes built in with https://mochajs.org/ and https://www.chaijs.com/
 truffle test
+
+//Add client side data and do truffle migrate --reset
+
+//Start lite server - npm run dev
