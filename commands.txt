@@ -1,0 +1,11 @@
+truffle unbox pet-shop
+
+truffle migrate
+
+truffle console
+
+// on truffle console : for testing in console
+Election.deployed().then(function(instance) { app = instance })
+app.address
+app.candidate()
+
